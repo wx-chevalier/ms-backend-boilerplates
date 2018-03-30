@@ -1,0 +1,22 @@
+// 辅助程序
+apply plugin: "com.arenagod.gradle.MybatisGenerator"
+
+// 自动生成的配置
+configurations {
+    mybatisGenerator
+}
+
+mybatisGenerator {
+    verbose = true
+    configFile = 'src/main/resources/autogen/generatorConfig.xml'
+}
+
+task help {
+
+    doLast {
+        println "使用 gradle :bootRun 运行 Spring Boot 项目（这里的 : 表示从根模块开始运行）"
+        println "使用 gradle :build 打包 Jar"
+        println "使用 gradle task 查看所有任务"
+    }
+
+}
