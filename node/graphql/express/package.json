@@ -1,0 +1,72 @@
+{
+  "name": "express-rest-api-boilerplate",
+  "version": "0.0.0",
+  "author": "Lukas Aichbauer <l.aichbauer@gmail.com>",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/aichbauer/express-rest-api-boilerplate.git"
+  },
+  "homepage": "https://github.com/aichbauer/express-rest-api-boilerplate#readme",
+  "bugs": {
+    "url": "https://github.com/aichbauer/express-rest-api-boilerplate/issues"
+  },
+  "scripts": {
+    "dev": "cross-env NODE_ENV=development node ./api/api.js",
+    "create-sqlite-db": "shx touch ./db/database.sqlite",
+    "drop-sqlite-db": "shx rm ./db/database.sqlite",
+    "lint": "eslint ./api/. ./config/. ./test/.",
+    "prestart": "npm run create-sqlite-db",
+    "start": "npm run nodemon",
+    "nodemon": "nodemon --exec npm run dev",
+    "prepush": "npm test; npm run drop-sqlite-db; npm run create-sqlite-db",
+    "pretest": "npm run lint",
+    "production": "cross-env NODE_ENV=production node ./api/api.js",
+    "test": "cross-env NODE_ENV=testing nyc ava",
+    "test-ci": "nyc ava --no-color"
+  },
+  "babel": {
+    "presets": [
+      "env"
+    ]
+  },
+  "ava": {
+    "require": [
+      "babel-register",
+      "babel-polyfill"
+    ],
+    "babel": "inherit"
+  },
+  "nyc": {
+    "exclude": [
+      "test"
+    ]
+  },
+  "dependencies": {
+    "apollo-server-express": "^1.3.6",
+    "bcrypt-nodejs": "^0.0.3",
+    "body-parser": "^1.18.2",
+    "cors": "^2.8.4",
+    "express": "^4.16.3",
+    "express-routes-mapper": "^1.0.2",
+    "graphql": "^0.13.2",
+    "helmet": "^3.12.0",
+    "jsonwebtoken": "^8.2.1",
+    "lodash.merge": "^4.6.1",
+    "sequelize": "^4.37.6",
+    "sqlite3": "^4.0.0"
+  },
+  "devDependencies": {
+    "ava": "^0.25.0",
+    "babel-polyfill": "^6.26.0",
+    "cross-env": "^5.1.4",
+    "eslint": "^4.19.1",
+    "eslint-config-airbnb-base": "^12.1.0",
+    "eslint-plugin-import": "^2.11.0",
+    "husky": "^0.14.3",
+    "nodemon": "^1.17.3",
+    "nyc": "^11.7.1",
+    "shx": "^0.2.2",
+    "supertest": "^3.0.0"
+  }
+}
