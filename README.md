@@ -24,7 +24,7 @@
   * [JWT](./node/express/jwt): 集成 JWT 权限认证模板
   * [Passport](./node/express/passport): 集成 Passport 权限认证模板
 
-* [koa](./node/koa)
+* [Koa](./node/koa)
 
 * [Egg.js](./node/egg)
 
@@ -33,9 +33,13 @@
 
 * [Nest.js](./node/nest)
 
+* [GraphQL](./node/graphql)
+
 ## Go
 
 为了 [Go](https://github.com/wxyyxc1992/gopher-hut)
+
+## GraphQL
 
 ## Other
 
