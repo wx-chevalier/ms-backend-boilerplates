@@ -1,0 +1,42 @@
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+
+<body>
+
+</body>
+<script src="https://cdn.ravenjs.com/3.19.1/raven.min.js" crossorigin="anonymous"></script>
+<script>
+    Raven.config('http://4fc4ec9ffcf642bda964dc9a701498d8@sentry.jyzx.truelore.cn:81/2', {
+        logger: 'my-javascript',
+        headers: {
+            'CSRF-TOKEN': function () {
+                // custom logic that will be computed on every request
+                return new Date();
+            }
+        },
+        whitelistUrls: [
+            /localhost/,
+            /127\.0\.0\.1/
+        ]
+    }).install()
+
+    Raven.debug = true;
+
+</script>
+
+<script>
+    try {
+        throw new Error('test');
+    } catch (err) {
+        console.log('err', err);
+        Raven.captureException(err);
+    }
+</script>
+
+</html>
