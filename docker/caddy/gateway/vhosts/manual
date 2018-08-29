@@ -24,7 +24,7 @@ http://docker.hostname.cn, https://docker.hostname.cn {
         header_upstream Connection ""
     }
 
-    proxy /api/websocket/* 172.17.0.1:9000/api/websocket/* {
+    proxy /api/websocket 172.17.0.1:9000 {
         websocket
         header_upstream Host {host}
         header_upstream Connection "Upgrade"
