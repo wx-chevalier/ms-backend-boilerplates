@@ -1,0 +1,14 @@
+[ignore]
+<PROJECT_ROOT>/node_modules/stylelint
+
+[include]
+
+[libs]
+./src/types.js
+
+[options]
+# workaround for errors on importing CSS
+# http://github.com/facebook/flow/issues/2092
+module.name_mapper='.*\.css$' -> './helpers/CSSModule'
+
+module.name_mapper='.*\.graphql$' -> 'empty/object'

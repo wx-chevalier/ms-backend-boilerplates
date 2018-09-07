@@ -1,0 +1,685 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Storyshots Header GraphQL Subscription tab 1`] = `
+<div
+  className="ui small inverted header menu"
+>
+  <a
+    className="item header-logo"
+    onClick={[Function]}
+    style={Object {}}
+  >
+    <img
+      alt="logo"
+      className="app-logo"
+      src="logo.svg"
+    />
+    Example App
+  </a>
+  <a
+    className="item"
+    onClick={[Function]}
+    style={Object {}}
+  >
+    Local
+  </a>
+  <a
+    className="item"
+    onClick={[Function]}
+    style={Object {}}
+  >
+    GraphQL
+  </a>
+  <a
+    className="item active"
+    onClick={[Function]}
+    style={Object {}}
+  >
+    GraphQL Subscription
+  </a>
+  <div
+    className="right menu"
+  >
+    <div
+      className="item"
+      id="username"
+      onClick={[Function]}
+    >
+      <i
+        aria-hidden="true"
+        className="green user icon"
+      />
+      bob
+    </div>
+    <div
+      className="item"
+      onClick={[Function]}
+    >
+      <button
+        className="ui button"
+        disabled={undefined}
+        id="signinLink"
+        onClick={[Function]}
+        tabIndex={undefined}
+      >
+        <i
+          aria-hidden="true"
+          className="log out icon"
+        />
+        Sign out
+      </button>
+    </div>
+  </div>
+</div>
+`;
+
+exports[`Storyshots Header GraphQL tab 1`] = `
+<div
+  className="ui small inverted header menu"
+>
+  <a
+    className="item header-logo"
+    onClick={[Function]}
+    style={Object {}}
+  >
+    <img
+      alt="logo"
+      className="app-logo"
+      src="logo.svg"
+    />
+    Example App
+  </a>
+  <a
+    className="item"
+    onClick={[Function]}
+    style={Object {}}
+  >
+    Local
+  </a>
+  <a
+    className="item active"
+    onClick={[Function]}
+    style={Object {}}
+  >
+    GraphQL
+  </a>
+  <a
+    className="item"
+    onClick={[Function]}
+    style={Object {}}
+  >
+    GraphQL Subscription
+  </a>
+  <div
+    className="right menu"
+  >
+    <div
+      className="item"
+      id="username"
+      onClick={[Function]}
+    >
+      <i
+        aria-hidden="true"
+        className="green user icon"
+      />
+      bob
+    </div>
+    <div
+      className="item"
+      onClick={[Function]}
+    >
+      <button
+        className="ui button"
+        disabled={undefined}
+        id="signinLink"
+        onClick={[Function]}
+        tabIndex={undefined}
+      >
+        <i
+          aria-hidden="true"
+          className="log out icon"
+        />
+        Sign out
+      </button>
+    </div>
+  </div>
+</div>
+`;
+
+exports[`Storyshots Header Local tab 1`] = `
+<div
+  className="ui small inverted header menu"
+>
+  <a
+    className="item header-logo"
+    onClick={[Function]}
+    style={Object {}}
+  >
+    <img
+      alt="logo"
+      className="app-logo"
+      src="logo.svg"
+    />
+    Example App
+  </a>
+  <a
+    className="item active"
+    onClick={[Function]}
+    style={Object {}}
+  >
+    Local
+  </a>
+  <a
+    className="item"
+    onClick={[Function]}
+    style={Object {}}
+  >
+    GraphQL
+  </a>
+  <a
+    className="item"
+    onClick={[Function]}
+    style={Object {}}
+  >
+    GraphQL Subscription
+  </a>
+  <div
+    className="right menu"
+  >
+    <div
+      className="item"
+      id="username"
+      onClick={[Function]}
+    >
+      <i
+        aria-hidden="true"
+        className="green user icon"
+      />
+      bob
+    </div>
+    <div
+      className="item"
+      onClick={[Function]}
+    >
+      <button
+        className="ui button"
+        disabled={undefined}
+        id="signinLink"
+        onClick={[Function]}
+        tabIndex={undefined}
+      >
+        <i
+          aria-hidden="true"
+          className="log out icon"
+        />
+        Sign out
+      </button>
+    </div>
+  </div>
+</div>
+`;
+
+exports[`Storyshots Header with admin user 1`] = `
+<div
+  className="ui small inverted header menu"
+>
+  <a
+    className="item header-logo"
+    onClick={[Function]}
+    style={Object {}}
+  >
+    <img
+      alt="logo"
+      className="app-logo"
+      src="logo.svg"
+    />
+    Example App
+  </a>
+  <a
+    className="item"
+    onClick={[Function]}
+    style={Object {}}
+  >
+    Local
+  </a>
+  <a
+    className="item"
+    onClick={[Function]}
+    style={Object {}}
+  >
+    GraphQL
+  </a>
+  <a
+    className="item"
+    onClick={[Function]}
+    style={Object {}}
+  >
+    GraphQL Subscription
+  </a>
+  <div
+    className="right menu"
+  >
+    <div
+      className="item"
+      id="username"
+      onClick={[Function]}
+    >
+      <i
+        aria-hidden="true"
+        className="red user icon"
+      />
+      bob
+    </div>
+    <div
+      className="item"
+      onClick={[Function]}
+    >
+      <button
+        className="ui button"
+        disabled={undefined}
+        id="signinLink"
+        onClick={[Function]}
+        tabIndex={undefined}
+      >
+        <i
+          aria-hidden="true"
+          className="log out icon"
+        />
+        Sign out
+      </button>
+    </div>
+  </div>
+</div>
+`;
+
+exports[`Storyshots Header with normal user 1`] = `
+<div
+  className="ui small inverted header menu"
+>
+  <a
+    className="item header-logo"
+    onClick={[Function]}
+    style={Object {}}
+  >
+    <img
+      alt="logo"
+      className="app-logo"
+      src="logo.svg"
+    />
+    Example App
+  </a>
+  <a
+    className="item"
+    onClick={[Function]}
+    style={Object {}}
+  >
+    Local
+  </a>
+  <a
+    className="item"
+    onClick={[Function]}
+    style={Object {}}
+  >
+    GraphQL
+  </a>
+  <a
+    className="item"
+    onClick={[Function]}
+    style={Object {}}
+  >
+    GraphQL Subscription
+  </a>
+  <div
+    className="right menu"
+  >
+    <div
+      className="item"
+      id="username"
+      onClick={[Function]}
+    >
+      <i
+        aria-hidden="true"
+        className="green user icon"
+      />
+      bob
+    </div>
+    <div
+      className="item"
+      onClick={[Function]}
+    >
+      <button
+        className="ui button"
+        disabled={undefined}
+        id="signinLink"
+        onClick={[Function]}
+        tabIndex={undefined}
+      >
+        <i
+          aria-hidden="true"
+          className="log out icon"
+        />
+        Sign out
+      </button>
+    </div>
+  </div>
+</div>
+`;
+
+exports[`Storyshots Header without auth 1`] = `
+<div
+  className="ui small inverted header menu"
+>
+  <a
+    className="item header-logo"
+    onClick={[Function]}
+    style={Object {}}
+  >
+    <img
+      alt="logo"
+      className="app-logo"
+      src="logo.svg"
+    />
+    Example App
+  </a>
+  <a
+    className="item"
+    onClick={[Function]}
+    style={Object {}}
+  >
+    Local
+  </a>
+  <a
+    className="item"
+    onClick={[Function]}
+    style={Object {}}
+  >
+    GraphQL
+  </a>
+  <a
+    className="item"
+    onClick={[Function]}
+    style={Object {}}
+  >
+    GraphQL Subscription
+  </a>
+  <div
+    className="right menu"
+  >
+    <a
+      className="item"
+      id="signinLink"
+      onClick={[Function]}
+      style={Object {}}
+    >
+      <button
+        className="ui button"
+        disabled={undefined}
+        onClick={[Function]}
+        tabIndex={undefined}
+      >
+        <i
+          aria-hidden="true"
+          className="sign in icon"
+        />
+        Sign in
+      </button>
+    </a>
+  </div>
+</div>
+`;
+
+exports[`Storyshots Signin Error 1`] = `
+<div
+  className="ui text container main main-content signin"
+>
+  <h1>
+    Sign in
+  </h1>
+  <form
+    action={undefined}
+    className="ui form"
+    onSubmit={[Function]}
+  >
+    <div
+      className="field"
+    >
+      <label
+        htmlFor="username"
+      >
+        Username
+      </label>
+      <input
+        disabled={false}
+        name="username"
+        type="text"
+      />
+    </div>
+    <div
+      className="field"
+    >
+      <label
+        htmlFor="password"
+      >
+        Password
+      </label>
+      <input
+        disabled={false}
+        name="password"
+        type="password"
+      />
+    </div>
+    <div
+      className="field"
+    >
+      <button
+        className="ui positive button"
+        disabled={undefined}
+        id="signin-button"
+        onClick={[Function]}
+        tabIndex={undefined}
+      >
+        Sign in
+      </button>
+    </div>
+  </form>
+  <div />
+  <div
+    className="ui negative message"
+  >
+    <div
+      className="header"
+    >
+      Sign in failed
+    </div>
+    <p>
+      Authentication failed
+    </p>
+  </div>
+  <div
+    className="ui horizontal divider"
+  >
+    or
+  </div>
+  <h4>
+    Sign in via
+  </h4>
+  <button
+    className="ui button"
+    disabled={undefined}
+    id="github-signin-button"
+    onClick={[Function]}
+    tabIndex={undefined}
+  >
+    <i
+      aria-hidden="true"
+      className="github icon"
+    />
+    Github
+  </button>
+</div>
+`;
+
+exports[`Storyshots Signin Initial state 1`] = `
+<div
+  className="ui text container main main-content signin"
+>
+  <h1>
+    Sign in
+  </h1>
+  <form
+    action={undefined}
+    className="ui form"
+    onSubmit={[Function]}
+  >
+    <div
+      className="field"
+    >
+      <label
+        htmlFor="username"
+      >
+        Username
+      </label>
+      <input
+        disabled={false}
+        name="username"
+        type="text"
+      />
+    </div>
+    <div
+      className="field"
+    >
+      <label
+        htmlFor="password"
+      >
+        Password
+      </label>
+      <input
+        disabled={false}
+        name="password"
+        type="password"
+      />
+    </div>
+    <div
+      className="field"
+    >
+      <button
+        className="ui positive button"
+        disabled={undefined}
+        id="signin-button"
+        onClick={[Function]}
+        tabIndex={undefined}
+      >
+        Sign in
+      </button>
+    </div>
+  </form>
+  <div />
+  <div
+    className="ui horizontal divider"
+  >
+    or
+  </div>
+  <h4>
+    Sign in via
+  </h4>
+  <button
+    className="ui button"
+    disabled={undefined}
+    id="github-signin-button"
+    onClick={[Function]}
+    tabIndex={undefined}
+  >
+    <i
+      aria-hidden="true"
+      className="github icon"
+    />
+    Github
+  </button>
+</div>
+`;
+
+exports[`Storyshots Signin Signing in 1`] = `
+<div
+  className="ui text container main main-content signin"
+>
+  <h1>
+    Sign in
+  </h1>
+  <form
+    action={undefined}
+    className="ui form"
+    onSubmit={[Function]}
+  >
+    <div
+      className="field"
+    >
+      <label
+        htmlFor="username"
+      >
+        Username
+      </label>
+      <input
+        disabled={true}
+        name="username"
+        type="text"
+      />
+    </div>
+    <div
+      className="field"
+    >
+      <label
+        htmlFor="password"
+      >
+        Password
+      </label>
+      <input
+        disabled={true}
+        name="password"
+        type="password"
+      />
+    </div>
+    <div
+      className="field"
+    >
+      <button
+        className="ui positive disabled button"
+        disabled={true}
+        id="signin-button"
+        onClick={[Function]}
+        tabIndex={-1}
+      >
+        Sign in
+      </button>
+    </div>
+  </form>
+  <div />
+  <div
+    className="ui message"
+  >
+    <p>
+      Signing in...
+    </p>
+  </div>
+  <div
+    className="ui horizontal divider"
+  >
+    or
+  </div>
+  <h4>
+    Sign in via
+  </h4>
+  <button
+    className="ui disabled button"
+    disabled={true}
+    id="github-signin-button"
+    onClick={[Function]}
+    tabIndex={-1}
+  >
+    <i
+      aria-hidden="true"
+      className="github icon"
+    />
+    Github
+  </button>
+</div>
+`;
