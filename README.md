@@ -2,45 +2,60 @@
 
 # TOC | 目录
 
-## Java
+## Framework | 编程框架
 
-* [Spring](./java/spring)
+### Java
 
-  * [gradle](./java/spring/gradle): 基于 Gradle 的最小化项目
-  * [maven](./java/spring/maven): 基于 Maven 的最小化项目
-  * [test](./java/spring/gradle): 演示测试用例的项目
-  * [production](./java/spring/production): 用于生产环境的全特性项目
-  * [grpc](./java/spring/grpc): 集成 grpc 远程调用示例
-  * [rarf](./java/spring/rarf): 演示 RARF 框架的示例
+- [Spring](./java/spring)
 
-* [Play](./java/spring)
+  - [gradle](./java/spring/gradle): 基于 Gradle 的最小化项目
+  - [gradle-minimal](./java/spring/gradle-minimal): 基于 Gradle 的生产环境多模块全特性项目
+  - [maven-multiple-modules](./java/spring/maven): 基于 Maven 的多模块项目
+  - [test](./java/spring/gradle): 演示测试用例的项目
+  - [grpc](./java/spring/grpc): 集成 grpc 远程调用示例
+  - [rarf](./java/spring/rarf): 演示 RARF 框架的示例
+  - [mybatis](./java/spring/mybatis): 基于 Mybatis 示例
 
-## Node.js
+- [Play](./java/spring)
 
-* [Express](./node/express)
+- [Dubbo](./java/dubbo)
+  - [spring-boot](./java/spring-boot): Dubbo 与 Spring Boot 集成使用示例
 
-  * [minimal](./node/express/minimal): Express 最小化模板
-  * [ts](./node/express/ts): TypeScript 模板
-  * [JWT](./node/express/jwt): 集成 JWT 权限认证模板
-  * [Passport](./node/express/passport): 集成 Passport 权限认证模板
+### Node.js
 
-* [Koa](./node/koa)
+- [Express](./node/express)
 
-* [Egg.js](./node/egg)
+  - [minimal](./node/express/minimal): Express 最小化模板
+  - [ts](./node/express/ts): TypeScript 模板
+  - [JWT](./node/express/jwt): 集成 JWT 权限认证模板
+  - [Passport](./node/express/passport): 集成 Passport 权限认证模板
 
-  * [minimal](./node/egg/minimal): Egg.js 最小化模板
-  * [typescript](./node/egg/ts): TypeScript 模板
+- [Koa](./node/koa)
 
-* [Nest.js](./node/nest)
+- [Egg.js](./node/egg)
 
-* [GraphQL](./node/graphql)
+  - [minimal](./node/egg/minimal): Egg.js 最小化模板
+  - [typescript-minimal](./node/egg/ts-minimal): TypeScript 最小化模板
+  - [typescript](./node/egg/ts-minimal): 完整的 TypeScript 生产项目模板，包括了 Sequelize, Knex, Bookshelf, GraphQL 等多重特性配置
 
-## Go
+- [Nest.js](./node/nest)
 
-为了 [Go](https://github.com/wxyyxc1992/gopher-hut)
+- [GraphQL](./node/graphql)
 
-## GraphQL
+### Go
+
+- [beego-minimal](./go/beego-minimal)
+
+### GraphQL
+
+## Infrastructure | 架构配置
+
+- [Docker]()
+
+- [K8s]()
+
+- [linux-scripts]()
 
 ## Other
 
-* [admin-ui](./admin-ui): 通用后台管理界面
+- [admin-ui](./admin-ui): 通用后台管理界面
