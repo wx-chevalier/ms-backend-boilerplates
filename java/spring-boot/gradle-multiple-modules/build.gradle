@@ -53,7 +53,7 @@ allprojects {
     }
 
     // 设置组名
-    group = "wx.csba"
+    group = "wx.spring"
 
     // 设置源代码路径
     sourceSets {
@@ -113,7 +113,7 @@ dependencies {
 
 // 设置 Spring Boot 根类
 bootRepackage {
-    mainClass = 'wx.csba.webapp.Application'
+    mainClass = 'wx.spring.Application'
 }
 
 // 设置打包生成的 Jar 包信息

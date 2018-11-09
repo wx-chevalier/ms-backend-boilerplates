@@ -19,12 +19,12 @@ public class AkkaFutureApp {
         ActorRef printActor = system.actorOf(Props.create(PrintActor.class), "PrintActor");
         ActorRef workerActor = system.actorOf(Props.create(WorkerActor.class), "WorkerActor");
 
-        //等等future返回
+        // 等待 Future 返回
         Future<Object> future = Patterns.ask(workerActor, 5, 1000);
         int result = (int) Await.result(future, Duration.create(3, TimeUnit.SECONDS));
         System.out.println("result:" + result);
 
-        //不等待返回值，直接重定向到其他actor，有返回值来的时候将会重定向到printActor
+        // 不等待返回值，直接重定向到其他 actor，有返回值来的时候将会重定向到 printActor
         Future<Object> future1 = Patterns.ask(workerActor, 8, 1000);
         Patterns.pipe(future1, system.dispatcher()).to(printActor);
 

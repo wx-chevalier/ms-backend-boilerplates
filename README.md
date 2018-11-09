@@ -6,6 +6,8 @@
 
 ### Java
 
+所有的 Java 包名以 wx 开头，譬如 `wx.spring`, `wx.akka` 等。
+
 - [Spring](./java/spring)
 
   - [gradle](./java/spring/gradle): 基于 Gradle 的最小化项目
@@ -16,10 +18,11 @@
   - [rarf](./java/spring/rarf): 演示 RARF 框架的示例
   - [mybatis](./java/spring/mybatis): 基于 Mybatis 示例
 
-- [Play](./java/spring)
-
 - [Dubbo](./java/dubbo)
+
   - [spring-boot](./java/spring-boot): Dubbo 与 Spring Boot 集成使用示例
+
+- [Akka](./java/akka)
 
 ### Node.js
 
@@ -48,14 +51,10 @@
 
 ### GraphQL
 
-## Infrastructure | 架构配置
+## Infrastructure | 运维脚本
 
 - [Docker]()
 
 - [K8s]()
 
 - [linux-scripts]()
-
-## Other
-
-- [admin-ui](./admin-ui): 通用后台管理界面

@@ -8,8 +8,8 @@
     <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
   </properties>
 
-  <groupId>com.typesafe.akka.samples</groupId>
-  <artifactId>akka-sample-supervision-java</artifactId>
+  <groupId>wx.akka</groupId>
+  <artifactId>akka-supervision</artifactId>
   <packaging>jar</packaging>
   <version>empty</version>
 
