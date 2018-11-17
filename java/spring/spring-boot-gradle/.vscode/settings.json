@@ -1,0 +1,4 @@
+{
+  "java.configuration.updateBuildConfiguration": "automatic",
+  "java.format.settings.url": "./.vscode/eclipse-codestyle.xml"
+}

@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="wx.repository.user.UserRepository">
+    <select id="findByName" resultMap="user">
+        <choose>
+            <when test="withAuthorities">
+                SELECT
+                user.id AS id,
+                user.name AS name,
+                password,
+                authority.name AS auth_name
+                FROM user
+                LEFT JOIN user_authority ON user.id=user_authority.user_id
+                LEFT JOIN authority ON authority.name=user_authority.authority_name
+                WHERE user.name=#{name}
+            </when>
+            <otherwise>
+                SELECT id, name, password FROM user WHERE name = #{name}
+            </otherwise>
+        </choose>
+    </select>
+    <select id="findAll" resultMap="user">
+        SELECT id, name FROM user
+    </select>
+    <insert id="save">
+        INSERT INTO user(id, name, password, expired, locked)
+        VALUES (#{id}, #{name}, #{password}, FALSE, FALSE)
+    </insert>
+    <insert id="addAuthority">
+        INSERT INTO user_authority(user_id, authority_name) VALUES (#{userId}, #{authority.name})
+    </insert>
+    <update id="setPassword">
+        UPDATE user SET password=#{password} WHERE name=#{name}
+    </update>
+    <resultMap id="user" type="wx.sdk.entity.user.User">
+        <id property="id" column="id"/>
+        <result property="name" column="name"/>
+        <result property="password" column="password"/>
+        <result property="expired" column="expired"/>
+        <result property="locked" column="locked"/>
+        <collection property="authorities"
+                    ofType="wx.sdk.entity.user.Authority">
+            <id property="name" column="auth_name"/>
+        </collection>
+    </resultMap>
+</mapper>

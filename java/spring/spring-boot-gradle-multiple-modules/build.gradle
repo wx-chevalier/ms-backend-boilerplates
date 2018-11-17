@@ -1,0 +1,153 @@
+
+buildscript {
+    repositories {
+        maven { url 'http://repo.spring.io/plugins-release' }
+        maven { url "https://plugins.gradle.org/m2/" }
+        mavenCentral()
+        jcenter()
+    }
+    dependencies {
+        classpath "gradle.plugin.com.arenagod.gradle:mybatis-generator-plugin:1.3"
+        classpath "org.springframework.boot:spring-boot-gradle-plugin:1.4.0.RELEASE"
+        classpath "org.springframework:springloaded:1.2.6.RELEASE"
+    }
+}
+
+ext {
+    // 设置脚本地址
+    gradleScriptDir = "${rootProject.projectDir}/gradle"
+
+    // 设置版本号
+    springBootVersion = "1.5.2.RELEASE"
+}
+
+apply plugin: "idea"
+
+idea {
+    module {
+        inheritOutputDirs = false
+        outputDir = file("$buildDir/classes/main/")
+        testOutputDir = file("$buildDir/classes/test/")
+    }
+}
+
+
+allprojects {
+
+    // 插件
+    apply plugin: 'java'
+    apply plugin: "spring-boot"
+
+    // 仓库
+    repositories {
+
+        // 引入本地依赖
+        maven { url "file:" + rootProject.projectDir + "/lib/" }
+        mavenCentral()
+        jcenter()
+        maven { url 'http://repo.spring.io/snapshot' }
+        maven { url 'http://repo.spring.io/milestone' }
+        maven { url 'https://jitpack.io' }
+        maven { url 'http://repo.maven.apache.org/maven2' }
+
+    }
+
+    // 设置组名
+    group = "wx.spring"
+
+    // 设置源代码路径
+    sourceSets {
+        main {
+            java {
+                srcDir "src/main/java"
+            }
+            resources {
+                srcDir "src/main/resources"
+                srcDir "src/main/java"
+                exclude "**/*.java"
+            }
+        }
+
+        test {
+            java {
+                srcDir "src/test/java"
+            }
+            resources {
+                srcDir "src/test/resources"
+                srcDir "src/test/java"
+                exclude "**/*.java"
+            }
+        }
+    }
+
+    // 编译兼容及目标版本
+    compileJava {
+        sourceCompatibility = 1.8
+        targetCompatibility = 1.8
+        options*.compilerArgs = [
+                // 编译参数
+                // "-Xlint:deprecation",
+                "-Werror"
+        ]
+    }
+
+    // 测试兼容及目标版本
+    compileTestJava {
+        sourceCompatibility = 1.8
+        targetCompatibility = 1.8
+        options*.compilerArgs = [
+                // 测试编译参数
+                "-parameters"
+        ]
+    }
+
+    // 引入所有项目依赖
+    apply from: "${rootProject.projectDir}/dependencies.gradle"
+}
+
+
+dependencies {
+    compile project(':module:sdk')
+    compile project(':module:service')
+    compile project(':module:start')
+}
+
+// 设置 Spring Boot 根类
+bootRepackage {
+    mainClass = 'wx.spring.Application'
+}
+
+// 设置打包生成的 Jar 包信息
+jar {
+    baseName = 'spring-boot-app-boilerplate'
+    version = '0.0.1'
+}
+
+// sdk 模块，暴露实体类(DTO)以及 Dubbo 接口
+project(':module:sdk') {
+}
+
+// 服务模块，执行逻辑与数据访问
+project(':module:service') {
+    dependencies {
+        compile project(':module:sdk')
+    }
+}
+
+// 应用路口，暴露 REST 接口
+project(':module:service') {
+    dependencies {
+        compile project(':module:sdk')
+    }
+}
+
+// 扩展模块
+project(":module:weixin") {
+    dependencies {
+        compile project(':module:model')
+        compile project(':module:shared')
+    }
+}
+
+// 引入全部任务定义
+apply from: './task.gradle';

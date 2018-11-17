@@ -1,0 +1,72 @@
+#+TITLE: Spring + MyBatis + Restful
+
+* 环境配置
+启动测试用数据库
+#+BEGIN_SRC sh
+docker run -d -p 3306:3306 \
+       -e MYSQL_ALLOW_EMPTY_PASSWORD=yes \
+       -v ${PWD}/src/main/resources/db/mysql:/docker-entrypoint-initdb.d \
+       --name spring-mybatis-db \
+       mysql:5.7.14
+#+END_SRC
+* 接口测试
+注册
+#+BEGIN_SRC sh :results drawer
+curl -H "Content-Type: application/json" -X POST -d '{
+    "name": "admin",
+    "password": "password"
+}' http://localhost:9000/user/sign-up
+#+END_SRC
+
+#+RESULTS:
+:RESULTS:
+{"id":"e77efb5f-1fb1-44d2-8d1c-baa0c3ed36e7"}
+:END:
+
+登陆
+#+BEGIN_SRC sh :results drawer
+curl -i -H "Content-Type: application/json" -X POST -d '{
+    "name": "admin",
+    "password": "password"
+}' http://localhost:9000/login
+#+END_SRC
+
+#+RESULTS:
+:RESULTS:
+HTTP/1.1 200 
+Authorization: Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJhZG1pbiIsImV4cCI6MTU0MDAwMzg1OX0.d6S5TklpHKIT9Cw0ONuLPGaAsJql7uyaIUk34YyPP0DpbMwg6a_R5Y_X7fEuTnbTALy0l6JqC6cr7G8oO8EeuQ
+X-Content-Type-Options: nosniff
+X-XSS-Protection: 1; mode=block
+Cache-Control: no-cache, no-store, max-age=0, must-revalidate
+Pragma: no-cache
+Expires: 0
+X-Frame-Options: DENY
+Content-Type: application/json;charset=ISO-8859-1
+Content-Length: 179
+Date: Fri, 19 Oct 2018 02:50:59 GMT
+
+{"token":"eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJhZG1pbiIsImV4cCI6MTU0MDAwMzg1OX0.d6S5TklpHKIT9Cw0ONuLPGaAsJql7uyaIUk34YyPP0DpbMwg6a_R5Y_X7fEuTnbTALy0l6JqC6cr7G8oO8EeuQ"}
+:END:
+
+验证
+#+BEGIN_SRC sh :results drawer
+curl -i -H "Content-Type: application/json" \
+     -H "Authorization: Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJhZG1pbiIsImV4cCI6MTUzOTk0MTU2MH0.XHW5AKXzyWEVtfKzAr6H7rO3nN1Lnl4b_g3beVqC0Ovy5y4qEeHISYoo8Q50CoIDz0KdbP_GXd461MWK_rOmwg" \
+     http://localhost:9000/user
+#+END_SRC
+
+#+RESULTS:
+:RESULTS:
+HTTP/1.1 200 
+X-Content-Type-Options: nosniff
+X-XSS-Protection: 1; mode=block
+Cache-Control: no-cache, no-store, max-age=0, must-revalidate
+Pragma: no-cache
+Expires: 0
+X-Frame-Options: DENY
+Content-Type: application/json;charset=UTF-8
+Transfer-Encoding: chunked
+Date: Thu, 18 Oct 2018 09:34:27 GMT
+
+[{"id":"398b80a4-c091-40fc-b9fc-1f464f58532e","name":"admin","password":null,"role":null}]
+:END:

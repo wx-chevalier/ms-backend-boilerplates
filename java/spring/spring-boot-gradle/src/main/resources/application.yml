@@ -1,0 +1,53 @@
+spring:
+  profiles:
+    active: dev
+server:
+  port: 9000
+logging:
+  level:
+    root: INFO
+mybatis:
+  mapper-locations: classpath:wx/**/*.xml
+security:
+  public-urls:
+    - /user/sign-up
+    - /hello
+  jwt:
+    authority-claim: authorities
+    token-header: Authorization
+    token-prefix: Bearer
+    expiration-ms: 86400000
+    secret: hello
+---
+
+spring:
+  profiles: dev
+  datasource:
+    driver-class-name: com.mysql.jdbc.Driver
+    url: jdbc:mysql://127.0.0.1/dev_db?useUnicode=true&characterEncoding=utf8&useSSL=false
+    username: root
+    password: 
+logging:
+  level:
+    wx: DEBUG
+
+---
+
+spring:
+  profiles: test
+  datasource:
+    driver-class-name: com.mysql.jdbc.Driver
+    url: jdbc:mysql://127.0.0.1/dev_db?useUnicode=true&characterEncoding=utf8&useSSL=false
+    username: root
+    password: 
+logging:
+  level:
+    wx: DEBUG
+
+---
+
+spring:
+  profiles: prod
+security:
+  jwt:
+    secret: something more complicated

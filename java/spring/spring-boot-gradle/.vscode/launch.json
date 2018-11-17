@@ -1,0 +1,15 @@
+{
+  "configurations": [
+    {
+      "type": "java",
+      "request": "launch",
+      "name": "Spring Boot Application",
+      "cwd": "${workspaceFolder}",
+      "console": "internalConsole",
+      "stopOnEntry": false,
+      "mainClass": "wx.starter.Application",
+      "args": "",
+      "projectName": "spring-boot-gradle"
+    }
+  ]
+}
