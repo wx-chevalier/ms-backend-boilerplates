@@ -10,13 +10,14 @@
 
 - [Spring](./java/spring)
 
-  - [gradle](./java/spring/gradle): 基于 Gradle 的最小化项目
-  - [gradle-minimal](./java/spring/gradle-minimal): 基于 Gradle 的生产环境多模块全特性项目
-  - [maven-multiple-modules](./java/spring/maven): 基于 Maven 的多模块项目
-  - [test](./java/spring/gradle): 演示测试用例的项目
-  - [grpc](./java/spring/grpc): 集成 grpc 远程调用示例
-  - [rarf](./java/spring/rarf): 演示 RARF 框架的示例
-  - [mybatis](./java/spring/mybatis): 基于 Mybatis 示例
+```sh
+spring-boot-gradle                  spring-boot-maven-multiple-modules  spring-reactive-functional          spring-security-login
+spring-boot-gradle-minimal          spring-boot-test                    spring-reactive-oauth               spring-security-oauth2
+spring-boot-gradle-multiple-modules spring-cloud-minimal                spring-reactive-security            spring-security-rest
+spring-boot-grpc                    spring-rarf                         spring-security-5                   spring-security-socket
+spring-boot-maven                   spring-reactive                     spring-security-basic-auth          spring-security-taglibs
+spring-boot-maven-minimal           spring-reactive-client              spring-security-jwt
+```
 
 - [Dubbo](./java/dubbo)
 

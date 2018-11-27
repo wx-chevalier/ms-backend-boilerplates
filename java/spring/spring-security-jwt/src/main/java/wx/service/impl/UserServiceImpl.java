@@ -1,6 +1,6 @@
 package wx.service.impl;
 
-import wx.dao.UserDao;
+import wx.dao.UserDAO;
 import wx.model.User;
 import wx.model.UserDTO;
 import wx.service.UserService;
@@ -17,7 +17,7 @@ import java.util.*;
 @Service(value = "userService")
 public class UserServiceImpl implements UserDetailsService, UserService {
 
-  @Autowired private UserDao userDao;
+  @Autowired private UserDAO userDao;
 
   @Autowired private BCryptPasswordEncoder bcryptEncoder;
 

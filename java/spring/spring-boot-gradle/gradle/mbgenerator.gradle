@@ -1,0 +1,17 @@
+configurations {
+    // ant task
+    mbgenerator
+}
+
+task mbgenerator {
+    doLast {
+        ant.taskdef(
+                name: 'mbgenerator',
+                classname: 'org.mybatis.generator.ant.GeneratorAntTask',
+                classpath: configurations.mbgenerator.asPath)
+        ant.mbgenerator(
+                overwrite: 'true',
+                configfile: project.getProperties().getOrDefault('mbgeneratorConfigFile', 'src/main/resources/mybatis/generator.xml'),
+                verbose: 'true')
+    }
+}
