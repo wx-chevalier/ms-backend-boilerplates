@@ -1,11 +1,7 @@
 #!/bin/sh
-
 # desc: setup linux system security
-# author:coralzd
-# powered by www.xiaohuai.com
-# version 0.1.2 written by 2011.05.03
-#account setup
 
+# account setup
 passwd -l xfs
 passwd -l news
 passwd -l nscd
