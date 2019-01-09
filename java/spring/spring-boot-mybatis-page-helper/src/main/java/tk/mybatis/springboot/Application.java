@@ -1,6 +1,6 @@
 package tk.mybatis.springboot;
 
-//特别注意，下面的是 tk.MapperScan
+// 特别注意，下面的是 tk.MapperScan
 
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -22,19 +22,19 @@ import tk.mybatis.spring.annotation.MapperScan;
 @SpringBootApplication
 @MapperScan(basePackages = "tk.mybatis.springboot.mapper")
 public class Application extends WebMvcConfigurerAdapter implements CommandLineRunner {
-    private Logger logger = LoggerFactory.getLogger(Application.class);
+  private Logger logger = LoggerFactory.getLogger(Application.class);
 
-    public static void main(String[] args) {
-        SpringApplication.run(Application.class, args);
-    }
+  public static void main(String[] args) {
+    SpringApplication.run(Application.class, args);
+  }
 
-    @Override
-    public void run(String... args) throws Exception {
-        logger.info("服务启动完成!");
-    }
+  @Override
+  public void run(String... args) throws Exception {
+    logger.info("服务启动完成!");
+  }
 
-    @RequestMapping("/")
-    String home() {
-        return "redirect:countries";
-    }
+  @RequestMapping("/")
+  String home() {
+    return "redirect:countries";
+  }
 }

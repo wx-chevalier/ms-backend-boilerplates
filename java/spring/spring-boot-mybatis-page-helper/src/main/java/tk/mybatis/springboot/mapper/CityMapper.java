@@ -32,4 +32,7 @@ import tk.mybatis.springboot.util.MyMapper;
  * @since 2016-01-22 22:17
  */
 public interface CityMapper extends MyMapper<City> {
+    String str = "dsfdfsd54353%%%";
+
+
 }
