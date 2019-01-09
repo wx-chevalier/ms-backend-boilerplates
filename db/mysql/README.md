@@ -1,0 +1,31 @@
+# db-mysql
+
+- 生成镜像
+
+```sh
+$ ./build-image.sh
+```
+
+- 部署镜像
+
+```sh
+# 无目录共享运行
+$ docker run --rm --name=test-mysql -p 3306:3306 test-mysql
+
+# MAC 下添加特殊目录共享
+$ docker run -d --restart always --name=test-mysql  -v ~/Desktop/test/mysql:/var/lib/mysql test-mysql
+
+$ docker run -d --restart always --name=test-mysql -v /var/test/mysql:/var/lib/mysql test-mysql
+```
+
+- 测试
+
+```
+$ docker run --rm -ti --name=mycli \
+  --link=test-mysql:mysql \
+  diyan/mycli \
+  --host=mysql \
+  --database=test \
+  --user=root \
+  --password=roottoor
+```
