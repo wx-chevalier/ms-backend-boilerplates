@@ -1,12 +1,12 @@
 # db-mysql
 
-- 生成镜像
+- Create Image | 生成镜像
 
 ```sh
 $ ./build-image.sh
 ```
 
-- 部署镜像
+- Deploy Image | 部署镜像
 
 ```sh
 # 无目录共享运行
@@ -18,9 +18,9 @@ $ docker run -d --restart always --name=test-mysql  -v ~/Desktop/test/mysql:/var
 $ docker run -d --restart always --name=test-mysql -v /var/test/mysql:/var/lib/mysql test-mysql
 ```
 
-- 测试
+- Text | 测试
 
-```
+```sh
 $ docker run --rm -ti --name=mycli \
   --link=test-mysql:mysql \
   diyan/mycli \
