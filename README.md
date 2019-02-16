@@ -6,7 +6,7 @@
 
 # Nav | 导航
 
-欢迎关注公众号[某熊的技术之路](https://i.postimg.cc/vH5XmBzr/qrcode-for-gh-f6ddfe4d9124-344.jpg)获取更多服务端开发相关的**知识图谱/学习路径/文章书籍/实践代码**等，或者前往[个人主页](http://wxyyxc1992.github.io/home/)进行交互式检索。
+欢迎关注公众号[某熊的技术之路](https://i.postimg.cc/vH5XmBzr/qrcode-for-gh-f6ddfe4d9124-344.jpg)获取更多服务端开发相关的 **知识图谱/学习路径/文章书籍/实践代码** 等，或者前往[个人主页](http://wxyyxc1992.github.io/home/)进行交互式检索。
 
 ## Java
 
