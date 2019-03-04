@@ -1,4 +1,5 @@
-# 自定义忽略文件
+# Akira-toriyama-hp-gojulawbot.php
+自定义忽略文件
 /classes/
 node_modules/
 
