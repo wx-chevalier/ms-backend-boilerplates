@@ -6,7 +6,7 @@ import (
 	"strings"
 	"time"
 
-	"github.com/wxyyxc1992/go-boot/codec"
+	"github.com/wxyyxc1992/go-boot/utils/codec"
 )
 
 type (

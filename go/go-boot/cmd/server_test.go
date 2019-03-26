@@ -4,11 +4,11 @@ import "testing"
 import (
 	"fmt"
 
-	"github.com/wpajqz/go-sdk/export"
+	"github.com/wxyyxc1992/go-boot/client"
 )
 
 func TestServer(t *testing.T) {
-	client := export.NewClient("127.0.0.1", 8080, &ReadyStateCallback{
+	client := client.NewClient("127.0.0.1", 8080, &ReadyStateCallback{
 		Open: func() {
 			fmt.Println("open connection")
 		},

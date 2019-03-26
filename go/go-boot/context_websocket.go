@@ -7,7 +7,7 @@ import (
 	"strconv"
 
 	"github.com/gorilla/websocket"
-	"github.com/wxyyxc1992/go-boot/codec"
+	"github.com/wxyyxc1992/go-boot/utils/codec"
 )
 
 var _ Context = new(ContextWebsocket)
