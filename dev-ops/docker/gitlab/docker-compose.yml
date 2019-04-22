@@ -1,0 +1,32 @@
+version: '3'
+services:
+  # https://gitlab.com/gitlab-org/omnibus-gitlab/issues/2299
+  gitlab:
+    image: gitlab/gitlab-ce:latest
+    restart: unless-stopped
+    hostname: 'gitlab.wsat-scan.com'
+    environment:
+      GITLAB_OMNIBUS_CONFIG: |
+        external_url 'http://gitlab.wsat-scan.com'
+        nginx['redirect_http_to_https'] = false
+        gitlab_rails['gitlab_shell_ssh_port'] = 522
+    ports:
+      - '9090:80'
+      - '522:22'
+    volumes:
+      - config:/etc/gitlab
+      - logs:/var/log/gitlab
+      - data:/var/opt/gitlab
+
+  runner-docker:
+    image: gitlab/gitlab-runner:latest
+    restart: unless-stopped
+    volumes:
+      - runner_config:/etc/gitlab-runner
+      - /var/run/docker.sock:/var/run/docker.sock
+
+volumes:
+  config:
+  logs:
+  data:
+  runner_config:

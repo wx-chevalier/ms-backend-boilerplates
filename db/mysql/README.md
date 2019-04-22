@@ -12,13 +12,16 @@ $ ./build-image.sh
 # 无目录共享运行
 $ docker run --rm --name=test-mysql -p 3306:3306 test-mysql
 
+# 自定义配置文件
+$ docker run --rm --name=test-mysql -p 3306:3306 -v ./etc:/etc/mysql/conf.d test-mysql
+
 # MAC 下添加特殊目录共享
 $ docker run -d --restart always --name=test-mysql  -v ~/Desktop/test/mysql:/var/lib/mysql test-mysql
 
 $ docker run -d --restart always --name=test-mysql -v /var/test/mysql:/var/lib/mysql test-mysql
 ```
 
-- Text | 测试
+- Test | 测试
 
 ```sh
 $ docker run --rm -ti --name=mycli \
