@@ -25,8 +25,8 @@ apply plugin: 'com.palantir.docker'
 // This is used as the docker image prefix (org)
 group = 'wx'
 version = '0.0.1-SNAPSHOT'
-sourceCompatibility = JavaVersion.VERSION_1_8
-targetCompatibility = JavaVersion.VERSION_1_8
+sourceCompatibility = 1.8
+targetCompatibility = 1.8
 
 bootJar {
     baseName = 'spring-boot-minimal'
@@ -50,11 +50,11 @@ repositories {
     mavenCentral()
 }
 
-sourceCompatibility = 1.8
-targetCompatibility = 1.8
-
 dependencies {
-    compile("org.springframework.boot:spring-boot-starter-web") 
+    annotationProcessor('org.projectlombok:lombok:1.18.4')
+    compile('org.projectlombok:lombok:1.18.4')
+    compile("org.springframework.boot:spring-boot-starter-web")
+
     testCompile("org.springframework.boot:spring-boot-starter-test")
 }
 
