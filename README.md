@@ -26,13 +26,16 @@ akka-future           akka-spring
 
 * [Spring & Spring Boot & Spring Cloud](./java/spring)
 
+建议使用 spring-boot-minimal 作为空白模板，使用 spring-boot-production 作为生产环境下模板。
+
 ```sh
-spring-boot-gradle(*)               spring-boot-maven-multiple-modules  spring-reactive-functional          spring-security-login
-spring-boot-gradle-minimal          spring-boot-test                    spring-reactive-oauth               spring-security-oauth2
-spring-boot-gradle-multiple-modules spring-cloud-minimal                spring-reactive-security            spring-security-rest
-spring-boot-grpc                    spring-rarf                         spring-security-5                   spring-security-socket
-spring-boot-maven                   spring-reactive                     spring-security-basic-auth          spring-security-taglibs
-spring-boot-maven-minimal           spring-reactive-client              spring-security-jwt
+spring-boot-mybatis-annotation  spring-reactive                 spring-security-jwt
+spring-boot-druid-dynamic-ds    spring-boot-mybatis-page-helper spring-reactive-client          spring-security-login
+spring-boot-gradle              spring-boot-mybatis-xml         spring-reactive-functional      spring-security-oauth2
+spring-boot-grpc                spring-boot-production(*)       spring-reactive-oauth           spring-security-rest
+spring-boot-hikari-dynamic-ds   spring-boot-test                spring-reactive-security        spring-security-socket
+spring-boot-minimal(*)          spring-cloud-minimal            spring-security-5               spring-security-taglibs
+spring-boot-multiple-modules    spring-rarf                     spring-security-basic-auth
 ```
 
 ## Node.js
@@ -79,7 +82,9 @@ beego-minimal       graphql          standards-layout
 
 ## DevOps | 运维脚本
 
-- [Docker](./dev-ops/docker): DockerX is a collection of configs, Dockerfiles, and Compose files to build images, applications, and clusters the way you need them. DockerX covers multiple fields: Server Side Application, DevOps, SRE, Cluster Orchestration, Microservices, etc.
+- [Docker](./dev-ops/docker)
+
+DockerX is a collection of configs, Dockerfiles, and Compose files to build images, applications, and clusters the way you need them. DockerX covers multiple fields: Server Side Application, DevOps, SRE, Cluster Orchestration, Microservices, etc.
 
 ```sh
 caddy      java       prometheus serverless
@@ -103,5 +108,5 @@ cleanup             harden
 ## Database | 数据库模板
 
 ```sh
-mysql           mysql-benchmark oracle
+mysql              mysql-benchmark    mysql-master-salve mysql-replication  oracle
 ```
