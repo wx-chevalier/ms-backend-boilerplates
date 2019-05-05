@@ -28,7 +28,7 @@
         <rollingPolicy
                 class="ch.qos.logback.core.rolling.TimeBasedRollingPolicy">
             <!-- rollover daily and when the file reaches 10 MegaBytes -->
-            <fileNamePattern>${LOGS}/archived/spring-boot-logger-%d{yyyy-MM-dd}.%i.log
+            <fileNamePattern>${LOG_PATH}/archived/spring-boot-logger-%d{yyyy-MM-dd}.%i.log
             </fileNamePattern>
             <timeBasedFileNamingAndTriggeringPolicy
                     class="ch.qos.logback.core.rolling.SizeAndTimeBasedFNATP">

@@ -10,7 +10,7 @@ import javax.servlet.ServletRequest;
 import javax.servlet.ServletResponse;
 import javax.servlet.http.HttpServletResponse;
 
-public class CORSFilter implements Filter {
+public class CorsFilter implements Filter {
 
   @Override
   public void doFilter(ServletRequest req, ServletResponse res, FilterChain chain)

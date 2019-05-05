@@ -4,9 +4,17 @@
 
 ## Maven
 
+```bash
+$ mvn spring-boot:run
+```
+
 ## Gradle
 
 ```bash
+# Start incremental build
+$ ./gradlew build -t
+$ ./gradlew build -t -x test
+
 # Start dev
 $ gradle bootRun
 ```
