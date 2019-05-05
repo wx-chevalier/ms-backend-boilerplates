@@ -106,5 +106,5 @@ cleanup             harden
 ## Database | 数据库模板
 
 ```sh
-mysql           mysql-benchmark oracle
+mysql              mysql-benchmark    mysql-master-salve mysql-replication  oracle
 ```
