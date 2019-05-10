@@ -3,7 +3,9 @@ PROJECT="spring-boot-minimal"
 
 git pull
 
-cd server/
+echo 'start build java'
+./gradlew spotlessApply
+./gradlew build -x test
 
 echo 'start build docker image.'
 docker build -t ${PROJECT}:latest -f ./deploy/Dockerfile .
