@@ -8,9 +8,13 @@
 
 欢迎关注公众号[某熊的技术之路](https://i.postimg.cc/vH5XmBzr/qrcode-for-gh-f6ddfe4d9124-344.jpg)获取更多服务端开发相关的 **知识图谱/学习路径/文章书籍/实践代码** 等，或者前往[个人主页](http://wxyyxc1992.github.io/home/)进行交互式检索。
 
+---
+
+鉴于项目包含的子项目较多，建议您是要 [GitZip](https://parg.co/QjH) 工具来便捷、独立下载所需的项目。
+
 ## Java
 
-所有的 Java 包名以 wx 开头，譬如 `wx.spring`, `wx.akka` 等。
+> 所有的 Java 包名以 wx 开头，譬如 `wx.spring`, `wx.akka` 等。
 
 - [Akka](./java/akka)
 
@@ -24,9 +28,7 @@ akka-future           akka-spring
 
 - [Dubbo](./java/dubbo)
 
-* [Spring & Spring Boot & Spring Cloud](./java/spring)
-
-建议使用 spring-boot-minimal 作为空白模板，使用 spring-boot-production 作为生产环境下模板。
+* [Spring & Spring Boot & Spring Cloud](./java/spring): 建议使用 spring-boot-minimal 作为空白模板，使用 spring-boot-production 作为生产环境下模板。
 
 ```sh
 spring-boot-mybatis-annotation  spring-reactive                 spring-security-jwt
@@ -40,73 +42,52 @@ spring-boot-multiple-modules    spring-rarf                     spring-security-
 
 ## Node.js
 
-- [Express](./node/express)
+- [Express](./node/express):express-jwt, express-passport, express-minimal, express-ts
 
-```sh
-express-jwt      express-passport
-express-minimal  express-ts
-```
+* [Koa](./node/koa)
 
-- [Koa](./node/koa)
+* [Egg.js](./node/egg): egg-graphql, egg-ts-minimal, egg-minimal, egg-ts-typeorm-graphql, egg-ts-knex-sequelize
 
-- [Egg.js](./node/egg)
+- [Nest.js](./node/nest): nest-jwt, nest-minimal, nest-production
 
-```sh
-egg-graphql            egg-ts-minimal
-egg-minimal            egg-ts-typeorm-graphql
-egg-ts-knex-sequelize
-```
-
-- [Nest.js](./node/nest)
-
-```sh
-nest-jwt        nest-minimal    nest-production
-```
-
-- [GraphQL](./node/graphql)
-
-```
-apollo-server koa           simple
-express       prisma
-```
+* [GraphQL](./node/graphql): apollo-server,koa, simple, express, prisma
 
 ## Go
 
-```sh
-beego-minimal       graphql          standards-layout
-```
+- [Beego](./go/beego)
+
+- [Docker](./go/go-docker)
 
 ## Python
 
+- [Basic](./python/basic)
+
+- [Pipenv](./python/pipenv)
+
 ## Rust
-
-## DevOps | 运维脚本
-
-- [Docker](./dev-ops/docker)
-
-DockerX is a collection of configs, Dockerfiles, and Compose files to build images, applications, and clusters the way you need them. DockerX covers multiple fields: Server Side Application, DevOps, SRE, Cluster Orchestration, Microservices, etc.
-
-```sh
-caddy      java       prometheus serverless
-compose    mysql      python
-elk        node       redis
-go         presto     sentry
-```
-
-- [K8s](./dev-ops/k8s)
-
-```sh
-helm-spring        offline-install.sh
-```
-
-- [linux-scripts](./dev-ops/linux-scripts)
-
-```sh
-cleanup             harden
-```
 
 ## Database | 数据库模板
 
-```sh
-mysql              mysql-benchmark    mysql-master-salve mysql-replication  oracle
-```
+- [Mongodb](./db/mongodb): mongodb-cluster, mongodb-local
+
+- [Mysql](./db/mysql): mysql-backup, mysql-ecommerce, mysql-master-salve,mysql-replication, mysql-benchmark, mysql-local, mysql-random-data-generator
+
+- [Presto](./db/presto): presto-chart, presto-launcher, presto-server
+
+- [Redis](./db/redis): redis-local, redis-sentinel
+
+## DevOps | 运维脚本
+
+- [ELK](./dev-ops/elk)
+
+- [Gitlab](./dev-ops/gitlab)
+
+- [linux-scripts](./dev-ops/linux-scripts)
+
+- [prometheus](./dev-ops/prometheus)
+
+- [Sentry](./dev-ops/sentry)
+
+## Infrastructure
+
+- [K8s](./dev-ops/k8s): helm-spring, offline-install.sh
