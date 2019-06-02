@@ -1,4 +1,3 @@
-
 buildscript {
     repositories {
         maven { url 'http://repo.spring.io/plugins-release' }
@@ -31,16 +30,13 @@ idea {
     }
 }
 
-
 allprojects {
-
     // 插件
     apply plugin: 'java'
     apply plugin: "spring-boot"
 
     // 仓库
     repositories {
-
         // 引入本地依赖
         maven { url "file:" + rootProject.projectDir + "/lib/" }
         mavenCentral()
@@ -64,6 +60,7 @@ allprojects {
             resources {
                 srcDir "src/main/resources"
                 srcDir "src/main/java"
+                include "**/*.properties"
                 exclude "**/*.java"
             }
         }
