@@ -1,0 +1,115 @@
+<html xmlns:th="http://www.thymeleaf.org" xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
+      layout:decorate="~{layout/baseLayout}">
+<body>
+<th:block layout:fragment="content">
+
+    <div class="container theme-showcase" role="main">
+        <form th:if="${readForSubmission}" th:action="@{/application/__${applicationNumber}__}" method="POST">
+            <br/>
+
+            <button type="submit" class="btn btn-success">Submit Application Form</button>
+
+
+        </form>
+        <br/>
+        <table class="table">
+            <thead class="thead-light">
+            <tr>
+                <th scope="col">Application Section</th>
+                <th scope="col">Started editing</th>
+                <th scope="col">Ready for submission</th>
+
+            </tr>
+            </thead>
+
+            <tbody>
+            <tr>
+                <td>
+                    <a class="btn btn-outline-secondary"
+                       th:href="@{'/application/' + ${applicationNumber}+'/applicant/1'}" role="button">
+                        First Applicant
+                    </a>
+                </td>
+
+                <td>
+                    <span th:if="${firstApplicant !=null}">yes</span>
+                    <span th:if="${firstApplicant ==null}">no</span>
+                </td>
+                <td>
+                    <i class="fa fa-check-circle" th:if="${firstApplicant !=null && firstApplicantValid }"></i>
+                    <i class="fa fa-times-circle" th:if="${firstApplicant !=null && !firstApplicantValid }"></i>
+                </td>
+            </tr>
+
+            <tr>
+                <td>
+                    <a class="btn btn-outline-secondary"
+                       th:href="@{'/application/' + ${applicationNumber}+'/applicant/2'}" role="button">
+                        Second Applicant
+                    </a>
+                </td>
+                <td>
+                    <span th:if="${secondApplicant !=null}">yes</span>
+                    <span th:if="${secondApplicant ==null}">no</span>
+                </td>
+                <td>
+                    <i class="fa fa-check-circle" th:if="${secondApplicant !=null && secondApplicantValid }"></i>
+                    <i class="fa fa-times-circle" th:if="${secondApplicant !=null && !secondApplicantValid }"></i>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <a class="btn btn-outline-secondary"
+                       th:href="@{'/application/' + ${applicationNumber}+'/household'}" role="button">
+                        Household Information
+                    </a>
+                </td>
+                <td>
+                    <span th:if="${household !=null}">yes</span>
+                    <span th:if="${household ==null}">no</span>
+                </td>
+                <td>
+                    <i class="fa fa-check-circle" th:if="${household !=null && householdValid }"></i>
+                    <i class="fa fa-times-circle" th:if="${household !=null && !householdValid }"></i>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <a class="btn btn-outline-secondary"
+                       th:href="@{'/application/' + ${applicationNumber}+'/realEstateProperty'}"
+                       role="button">
+                        Real Estate Property
+                    </a>
+                </td>
+                <td>
+                    <span th:if="${realEstateProperty !=null}">yes</span>
+                    <span th:if="${realEstateProperty ==null}">no</span>
+                </td>
+                <td>
+                    <i class="fa fa-check-circle" th:if="${realEstateProperty !=null && realEstatePropertyValid }"></i>
+                    <i class="fa fa-times-circle" th:if="${realEstateProperty !=null && !realEstatePropertyValid }"></i>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <a class="btn btn-outline-secondary"
+                       th:href="@{'/application/' + ${applicationNumber}+'/financing'}" role="button">Financing</a><br/>
+                </td>
+                <td>
+                    <span th:if="${financing !=null}">yes</span>
+                    <span th:if="${financing ==null}">no</span>
+                </td>
+                <td>
+                    <i class="fa fa-check-circle" th:if="${financing !=null && financingValid }"></i>
+                    <i class="fa fa-times-circle" th:if="${financing !=null && !financingValid }"></i>
+                </td>
+            </tr>
+            </tbody>
+
+            <tfoot></tfoot>
+        </table>
+        <br/>
+    </div>
+</th:block>
+</body>
+</html>

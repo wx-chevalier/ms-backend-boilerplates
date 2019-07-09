@@ -1,0 +1,141 @@
+<html xmlns:th="http://www.thymeleaf.org" xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
+      layout:decorate="~{layout/baseLayout}">
+<body>
+<th:block layout:fragment="content">
+
+    <div class="container theme-showcase" role="main">
+
+        <form th:action="@{/application/__${applicationNumber}__/financing}" th:object="${financing}" method="POST">
+            <input type="hidden" id="applicationNumber" th:field="*{applicationNumber}"/>
+            <input type="hidden" id="databaseId" th:field="*{databaseId}"/>
+            <h2>Financing</h2>
+            <div class="form-group">
+                <label for="financingNeeds">Financing needs</label>
+                <input class="form-control" id="financingNeeds" type="number" th:field="*{financingNeeds}"/>
+            </div>
+            <div class="row">
+                <div class="col-md-6"><h2>Own Resources</h2></div>
+                <div class="col-md-6"><h2>Purchase costs</h2></div>
+            </div>
+
+            <div class="row">
+                <div class="col-md-6">
+                    <div class="form-group">
+                        <label for="liquidAssets">Liquid assets</label>
+                        <input class="form-control" id="liquidAssets" type="number"
+                               th:field="*{ownResources.liquidAssets}"/>
+                    </div>
+                </div>
+                <div class="col-md-6">
+                    <div class="form-group">
+                        <label for="priceOfLand">Price of land</label>
+                        <input class="form-control" id="priceOfLand" type="number"
+                               th:field="*{purchaseCosts.priceOfLand}"/>
+                    </div>
+                </div>
+            </div>
+
+            <div class="row">
+                <div class="col-md-6">
+                    <div class="form-group">
+                        <label for="balanceFromBuildingSociety">Credit balances from the building society
+                            savings</label>
+                        <input class="form-control" id="balanceFromBuildingSociety" type="number"
+                               th:field="*{ownResources.balanceFromBuildingSociety}"/>
+                    </div>
+                </div>
+                <div class="col-md-6">
+                    <div class="form-group">
+                        <label for="purchasePrice">Purchase price</label>
+                        <input class="form-control" id="purchasePrice" type="number"
+                               th:field="*{purchaseCosts.purchasePrice}"/>
+                    </div>
+                </div>
+            </div>
+
+            <div class="row">
+                <div class="col-md-6">
+                    <div class="form-group">
+                        <label for="ownManpower">Own manpower in construction</label>
+                        <input class="form-control" id="ownManpower" type="number"
+                               th:field="*{ownResources.ownManpower}"/>
+                    </div>
+                </div>
+                <div class="col-md-6">
+                    <div class="form-group">
+                        <label for="reconstructionCosts">Reconstruction costs</label>
+                        <input class="form-control" id="reconstructionCosts" type="number"
+                               th:field="*{purchaseCosts.reconstructionCosts}"/>
+                    </div>
+                </div>
+            </div>
+
+            <div class="row">
+                <div class="col-md-6">&nbsp;</div>
+                <div class="col-md-6">
+                    <div class="form-group">
+                        <label for="additionalPurchaseCharges">Additional purchase charges (tax, solicitor)</label>
+                        <input class="form-control" id="additionalPurchaseCharges" type="number"
+                               th:field="*{purchaseCosts.additionalPurchaseCharges}"/>
+                    </div>
+                </div>
+            </div>
+
+
+            <h2>Loans</h2>
+            <table class="table">
+                <thead class="thead-light">
+                <tr>
+                    <th scope="col">#</th>
+                    <th scope="col">Amount</th>
+                    <th scope="col">Interest Rate</th>
+                    <th scope="col">Repayment Rate</th>
+                    <th scope="col">Years of fixed interest rate</th>
+                </tr>
+                </thead>
+
+                <tbody>
+                <tr th:each="loan, rowStat : *{loans}" th:class="${rowStat.even ? 'even' : 'odd'}">
+                    <input type="hidden" th:field="*{loans[__${rowStat.index}__].databaseId}"/>
+                    <th scope="row"><span th:text="${rowStat.index + 1}"/></th>
+                    <td><input class="form-control" type="number" max="2000000"
+                               th:field="*{loans[__${rowStat.index}__].loanAmount}"/></td>
+                    <td><input class="form-control" readonly type="text"
+                               th:field="*{loans[__${rowStat.index}__].interestRate}"/></td>
+                    <td>
+                        <select class="form-control" th:field="*{loans[__${rowStat.index}__].repaymentInPercent}">
+                            <option value="0"></option>
+                            <option value="1">1 %</option>
+                            <option value="2">2 %</option>
+                            <option value="3">3 %</option>
+                            <option value="4">4 %</option>
+                            <option value="5">5 %</option>
+                            <option value="6">6 %</option>
+                            <option value="7">7 %</option>
+                            <option value="8">8 %</option>
+                            <option value="9">9 %</option>
+                            <option value="10">10 %</option>
+                        </select>
+                    </td>
+                    <td>
+                        <select class="form-control" th:field="*{loans[__${rowStat.index}__].fixedInterestRateInYears}">
+                            <option value="0"></option>
+                            <option value="5">5 years</option>
+                            <option value="10">10 years</option>
+                            <option value="15">15 years</option>
+                            <option value="20">20 years</option>
+                        </select>
+                    </td>
+                </tr>
+                </tbody>
+
+                <tfoot></tfoot>
+            </table>
+
+            <button type="submit" class="btn btn-primary">Save</button>
+
+        </form>
+    </div>
+</th:block>
+</body>
+</html>
