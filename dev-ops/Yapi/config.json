@@ -1,0 +1,12 @@
+{
+    "port": "MY_PORT",
+    "adminAccount": "MY_ACOUNT",
+    "db": {
+       "servername": "MY_DB_SERVER",
+       "DATABASE": "MY_DB_NAME",
+       "port": "MY_DB_PORT",
+       "user": "MY_USER",
+       "pass": "MY_PASS",
+       "authSource": "MY_AUTH"
+    }
+ }
