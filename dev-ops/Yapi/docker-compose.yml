@@ -7,13 +7,12 @@ services:
     build:
       context: ./
       dockerfile: ./Dockerfile
-    image: skycitygalaxy/yapi
+    image: wx/yapi
     container_name: yapi
     environment:
       - VERSION=1.8.1
       - LOG_PATH=/tmp/yapi.log
       - HOME=/home
-      - MY_PORT=3001
       - MY_ACOUNT=heroxu123@gmail.com
       - MY_DB_SERVER=127.0.0.1
       - MY_DB_NAME=yapi
