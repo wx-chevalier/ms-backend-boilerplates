@@ -1,7 +1,0 @@
-subscription todoUpdatedSubscription {
-  todoUpdated {
-    id
-    text
-    completed
-  }
-}

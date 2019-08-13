@@ -1,9 +1,0 @@
-query todoListQuery {
-  todoList {
-    todos {
-      id
-      text
-      completed
-    }
-  }
-}
