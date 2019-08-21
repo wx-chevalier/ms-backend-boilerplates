@@ -1,0 +1,8 @@
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: {{ template "fullname" . }}-hadoop-config
+  labels:
+    app: {{ template "fullname" . }}
+data:
+  core-site.xml: {{ quote (index .Values.hadoop "core-site.xml") }}

@@ -1,0 +1,38 @@
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: {{ template "fullname" . }}-flink-config
+  labels:
+    app: {{ template "fullname" . }}
+data:
+  flink-conf.yaml: |
+    blob.server.port: 6124
+    jobmanager.rpc.address: {{ template "fullname" . }}-jobmanager
+    jobmanager.rpc.port: 6123
+    jobmanager.heap.mb: {{ .Values.flink.jobmanager_heap_mb }}
+    taskmanager.heap.mb: {{ .Values.flink.taskmanager_heap_mb }}
+    taskmanager.numberOfTaskSlots: {{ .Values.flink.num_slots_per_taskmanager }}
+    {{- if .Values.flink.config }}
+{{ .Values.flink.config | indent 4 }}
+    {{- end }}
+  log4j-console.properties: |
+    log4j.rootLogger=INFO, console, file
+
+    # Uncomment this if you want to _only_ change Flink's logging
+    #log4j.logger.org.apache.flink=INFO
+
+    # The following lines keep the log level of common libraries/connectors on
+    # log level INFO. The root logger does not override this. You have to manually
+    # change the log levels here.
+    log4j.logger.akka=INFO
+    log4j.logger.org.apache.kafka=INFO
+    log4j.logger.org.apache.hadoop=INFO
+    log4j.logger.org.apache.zookeeper=INFO
+
+    # Suppress the irrelevant (wrong) warnings from the Netty channel handler
+    log4j.logger.org.jboss.netty.channel.DefaultChannelPipeline=ERROR, console
+
+    # Log all infos to the console
+    log4j.appender.console=org.apache.log4j.ConsoleAppender
+    log4j.appender.console.layout=org.apache.log4j.PatternLayout
+    log4j.appender.console.layout.ConversionPattern=%d{yyyy-MM-dd HH:mm:ss,SSS} %-5p %-60c %x - %m%n

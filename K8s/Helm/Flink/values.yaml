@@ -1,0 +1,33 @@
+image: flink
+imageTag: latest
+imagePullPolicy: Always
+
+resources:
+  jobmanager:
+    limits:
+      cpu: 1000m
+      memory: 1280Mi
+    requests:
+      cpu: 1000m
+      memory: 1280Mi
+  taskmanager:
+    limits:
+      memory: 1280Mi
+    requests:
+      memory: 1280Mi
+
+flink:
+  jobmanager_heap_mb: 1024
+  taskmanager_heap_mb: 1024
+  num_taskmanagers: 1
+  num_slots_per_taskmanager: 1
+
+  ## Other config options for flink-conf.yaml
+  #config: |
+  #  some.option: 3
+
+hadoop:
+  core-site.xml: |
+    <?xml version="1.0"?>
+    <?xml-stylesheet type="text/xsl" href="configuration.xsl"?>
+    <configuration/>
