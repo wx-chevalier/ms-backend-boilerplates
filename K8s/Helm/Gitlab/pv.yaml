@@ -1,0 +1,171 @@
+# Gitlab Etc PV
+apiVersion: v1
+kind: PersistentVolume
+metadata:
+  namespace: ufc
+  name: pv-gitlab-etc
+spec:
+  storageClassName: ""
+  capacity:
+    storage: 500M
+  accessModes:
+    - ReadWriteOnce
+  volumeMode: Filesystem
+  hostPath:
+    path: /mnt/data/pv-gitlab-etc
+    type: ""
+  persistentVolumeReclaimPolicy: Retain
+  nodeAffinity:
+    required:
+      nodeSelectorTerms:
+      - matchExpressions:
+        - key: kubernetes.io/hostname
+          operator: In
+          values:
+          - 172.19.157.1
+---
+apiVersion: v1
+kind: PersistentVolumeClaim
+metadata:
+  namespace: ufc
+  name: pvc-gitlab-etc
+spec:
+  # It's necessary to specify "" as the storageClassName
+  # so that the default storage class won't be used, see
+  # https://kubernetes.io/docs/concepts/storage/persistent-volumes/#class-1
+  storageClassName: ""
+  volumeName: pv-gitlab-etc
+  accessModes:
+    - ReadWriteOnce
+  resources:
+    requests:
+      storage: 500M
+---
+# Gitlab Data PV
+apiVersion: v1
+kind: PersistentVolume
+metadata:
+  namespace: ufc
+  name: pv-gitlab-data
+spec:
+  storageClassName: ""
+  capacity:
+    storage: 3G
+  accessModes:
+    - ReadWriteOnce
+  volumeMode: Filesystem
+  hostPath:
+    path: /mnt/data/pv-gitlab-data
+    type: ""
+  persistentVolumeReclaimPolicy: Retain
+  nodeAffinity:
+    required:
+      nodeSelectorTerms:
+      - matchExpressions:
+        - key: kubernetes.io/hostname
+          operator: In
+          values:
+          - 172.19.157.1
+---
+apiVersion: v1
+kind: PersistentVolumeClaim
+metadata:
+  namespace: ufc
+  name: pvc-gitlab-data
+spec:
+  # It's necessary to specify "" as the storageClassName
+  # so that the default storage class won't be used, see
+  # https://kubernetes.io/docs/concepts/storage/persistent-volumes/#class-1
+  storageClassName: ""
+  volumeName: pv-gitlab-data
+  accessModes:
+    - ReadWriteOnce
+  resources:
+    requests:
+      storage: 3G
+---
+# Gitlab Postgresql PV
+apiVersion: v1
+kind: PersistentVolume
+metadata:
+  namespace: ufc
+  name: pv-gitlab-postgresql
+spec:
+  storageClassName: ""
+  capacity:
+    storage: 1G
+  accessModes:
+    - ReadWriteOnce
+  volumeMode: Filesystem
+  hostPath:
+    path: /mnt/data/pv-gitlab-postgresql
+    type: ""
+  persistentVolumeReclaimPolicy: Retain
+  nodeAffinity:
+    required:
+      nodeSelectorTerms:
+      - matchExpressions:
+        - key: kubernetes.io/hostname
+          operator: In
+          values:
+          - 172.19.157.1
+---
+apiVersion: v1
+kind: PersistentVolumeClaim
+metadata:
+  namespace: ufc
+  name: pvc-gitlab-postgresql
+spec:
+  # It's necessary to specify "" as the storageClassName
+  # so that the default storage class won't be used, see
+  # https://kubernetes.io/docs/concepts/storage/persistent-volumes/#class-1
+  storageClassName: ""
+  volumeName: pv-gitlab-postgresql
+  accessModes:
+    - ReadWriteOnce
+  resources:
+    requests:
+      storage: 1G
+---
+# Gitlab Redis PV
+apiVersion: v1
+kind: PersistentVolume
+metadata:
+  namespace: ufc
+  name: pv-gitlab-redis
+spec:
+  storageClassName: ""
+  capacity:
+    storage: 1G
+  accessModes:
+    - ReadWriteOnce
+  volumeMode: Filesystem
+  hostPath:
+    path: /mnt/data/pv-gitlab-redis
+    type: ""
+  persistentVolumeReclaimPolicy: Retain
+  nodeAffinity:
+    required:
+      nodeSelectorTerms:
+      - matchExpressions:
+        - key: kubernetes.io/hostname
+          operator: In
+          values:
+          - 172.19.157.1
+---
+apiVersion: v1
+kind: PersistentVolumeClaim
+metadata:
+  namespace: ufc
+  name: pvc-gitlab-redis
+spec:
+  # It's necessary to specify "" as the storageClassName
+  # so that the default storage class won't be used, see
+  # https://kubernetes.io/docs/concepts/storage/persistent-volumes/#class-1
+  storageClassName: ""
+  volumeName: pv-gitlab-redis
+  accessModes:
+    - ReadWriteOnce
+  resources:
+    requests:
+      storage: 1G

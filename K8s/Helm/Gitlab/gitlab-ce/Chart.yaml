@@ -1,0 +1,17 @@
+appVersion: 9.4.1
+deprecated: true
+description: GitLab Community Edition
+home: https://about.gitlab.com
+icon: https://gitlab.com/uploads/group/avatar/6543/gitlab-logo-square.png
+keywords:
+- git
+- ci
+- deploy
+- issue tracker
+- code review
+- wiki
+name: gitlab-ce
+sources:
+- https://hub.docker.com/r/gitlab/gitlab-ce/
+- https://docs.gitlab.com/omnibus/
+version: 0.2.2
