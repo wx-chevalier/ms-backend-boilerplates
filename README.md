@@ -8,9 +8,12 @@
 
 ## 项目索引
 
+- K8s
+
 ## 关联子项目
 
 - [spring-snippets](https://github.com/wx-chevalier/spring-snippets)
+- [node-snippets](https://github.com/wx-chevalier/node-snippets)
 
 # About
 
