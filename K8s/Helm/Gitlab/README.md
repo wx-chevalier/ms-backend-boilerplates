@@ -3,8 +3,8 @@
 kubectl apply -f pv.yaml
 
 ## 2. 启动 Docker Registry
-helm install --namespace ufc --name gitlab -f values.yaml gitlab-ce
+helm install --namespace test --name gitlab -f values.yaml gitlab-ce
 
 ## 3. 可以使用 values.yaml 更新 Docker registry
-helm upgrade --namespace ufc -f values.yaml gitlab gitlab-ce
+helm upgrade --namespace test -f values.yaml gitlab gitlab-ce
 ```

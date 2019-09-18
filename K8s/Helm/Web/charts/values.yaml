@@ -1,0 +1,61 @@
+replicaCount: 1
+
+imagePullSecrets:
+  - name: regcred
+nameOverride: ''
+fullnameOverride: ''
+
+context:
+  image:
+    registry: registry.test.wx-coder.cn
+    repository: test/test-web-client
+    tag: latest
+    pullPolicy: Always
+  service:
+    type: ClusterIP
+    port: 2015
+
+service:
+  type: LoadBalancer
+  # HTTP 端口
+  port: 2015
+  # nodePorts: 选择 30000-32767 之间的端口
+  nodePorts:
+    http: ''
+
+ingress:
+  enabled: true
+  annotations:
+    nginx.ingress.kubernetes.io/proxy-body-size: '0'
+    kubernetes.io/ingress.class: 'nginx'
+    certmanager.k8s.io/issuer: 'letsencrypt-prod'
+    # kubernetes.io/tls-acme: "true"
+  context:
+    hosts:
+      - host: test.wx-coder.cn
+        paths:
+          - '/'
+
+  tls:
+    - secretName: test-web-client-tls
+      hosts:
+        - test.wx-coder.cn
+
+resources:
+  {}
+  # We usually recommend not to specify default resources and to leave this as a conscious
+  # choice for the user. This also increases chances charts run on environments with little
+  # resources, such as Minikube. If you do want to specify resources, uncomment the following
+  # lines, adjust them as necessary, and remove the curly braces after 'resources:'.
+  # limits:
+  #   cpu: 100m
+  #   memory: 128Mi
+  # requests:
+  #   cpu: 100m
+  #   memory: 128Mi
+
+nodeSelector: {}
+
+tolerations: []
+
+affinity: {}

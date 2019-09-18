@@ -4,7 +4,7 @@
 # 集群公用 Issuer: letsencrypt-cluster
 kubectl apply -f cluster-issuer.yaml
 
-## namespace ufc
+## namespace test
 # 测试用 Issuer: letsencrypt-staging
 kubectl apply -f staging-issuer.yaml
 # 生产用 Issuer: letsencrypt-prod

@@ -12,7 +12,7 @@ image: gitlab/gitlab-ce:12.0.9-ce.0
 ## The URL (with protocol) that your users will use to reach the install.
 ## ref: https://docs.gitlab.com/omnibus/settings/configuration.html#configuring-the-external-url-for-gitlab
 ##
-externalUrl: http://gitlab.ufc.wx-coder.cn/
+externalUrl: http://gitlab.test.wx-coder.cn/
 
 ## Change the initial default admin password if set. If not set, you'll be
 ## able to set it when you first visit your install.
@@ -28,15 +28,15 @@ serviceType: LoadBalancer
 ##
 ingress:
   annotations:
-    kubernetes.io/ingress.class: "nginx"
-    certmanager.k8s.io/issuer: "letsencrypt-prod"
+    kubernetes.io/ingress.class: 'nginx'
+    certmanager.k8s.io/issuer: 'letsencrypt-prod'
   enabled: true
   tls:
     - secretName: gitlab-tls
       hosts:
-        - gitlab.ufc.wx-coder.cn
+        - gitlab.test.wx-coder.cn
   hosts:
-    - gitlab.ufc.wx-coder.cn
+    - gitlab.test.wx-coder.cn
 
 ## Configure external service ports
 ## ref: http://kubernetes.io/docs/user-guide/services/
@@ -75,7 +75,7 @@ persistence:
 ##
 postgresql:
   # 9.6 is the newest supported version for the GitLab container
-  imageTag: "9.6"
+  imageTag: '9.6'
   cpu: 1000m
   memory: 1Gi
 
@@ -91,7 +91,7 @@ postgresql:
 ## ref: https://github.com/kubernetes/charts/blob/master/stable/redis/README.md
 ##
 redis:
-  redisPassword: "gitlab"
+  redisPassword: 'gitlab'
 
   resources:
     requests:

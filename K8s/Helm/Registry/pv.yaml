@@ -1,10 +1,10 @@
 apiVersion: v1
 kind: PersistentVolume
 metadata:
-  namespace: ufc
+  namespace: test
   name: pv-docker-registry
 spec:
-  storageClassName: ""
+  storageClassName: ''
   capacity:
     storage: 10G
   accessModes:
@@ -12,27 +12,27 @@ spec:
   volumeMode: Filesystem
   hostPath:
     path: /mnt/data/pv-docker-registry
-    type: ""
+    type: ''
   persistentVolumeReclaimPolicy: Retain
   nodeAffinity:
     required:
       nodeSelectorTerms:
-      - matchExpressions:
-        - key: kubernetes.io/hostname
-          operator: In
-          values:
-          - 172.19.157.2
+        - matchExpressions:
+            - key: kubernetes.io/hostname
+              operator: In
+              values:
+                - 172.19.157.2
 ---
 apiVersion: v1
 kind: PersistentVolumeClaim
 metadata:
-  namespace: ufc
+  namespace: test
   name: pvc-docker-registry
 spec:
   # It's necessary to specify "" as the storageClassName
   # so that the default storage class won't be used, see
   # https://kubernetes.io/docs/concepts/storage/persistent-volumes/#class-1
-  storageClassName: ""
+  storageClassName: ''
   volumeName: pv-docker-registry
   accessModes:
     - ReadWriteOnce

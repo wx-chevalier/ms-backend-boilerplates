@@ -2,10 +2,10 @@
 apiVersion: v1
 kind: PersistentVolume
 metadata:
-  namespace: ufc
+  namespace: test
   name: pv-gitlab-etc
 spec:
-  storageClassName: ""
+  storageClassName: ''
   capacity:
     storage: 500M
   accessModes:
@@ -13,27 +13,27 @@ spec:
   volumeMode: Filesystem
   hostPath:
     path: /mnt/data/pv-gitlab-etc
-    type: ""
+    type: ''
   persistentVolumeReclaimPolicy: Retain
   nodeAffinity:
     required:
       nodeSelectorTerms:
-      - matchExpressions:
-        - key: kubernetes.io/hostname
-          operator: In
-          values:
-          - 172.19.157.1
+        - matchExpressions:
+            - key: kubernetes.io/hostname
+              operator: In
+              values:
+                - 172.19.157.1
 ---
 apiVersion: v1
 kind: PersistentVolumeClaim
 metadata:
-  namespace: ufc
+  namespace: test
   name: pvc-gitlab-etc
 spec:
   # It's necessary to specify "" as the storageClassName
   # so that the default storage class won't be used, see
   # https://kubernetes.io/docs/concepts/storage/persistent-volumes/#class-1
-  storageClassName: ""
+  storageClassName: ''
   volumeName: pv-gitlab-etc
   accessModes:
     - ReadWriteOnce
@@ -45,10 +45,10 @@ spec:
 apiVersion: v1
 kind: PersistentVolume
 metadata:
-  namespace: ufc
+  namespace: test
   name: pv-gitlab-data
 spec:
-  storageClassName: ""
+  storageClassName: ''
   capacity:
     storage: 3G
   accessModes:
@@ -56,27 +56,27 @@ spec:
   volumeMode: Filesystem
   hostPath:
     path: /mnt/data/pv-gitlab-data
-    type: ""
+    type: ''
   persistentVolumeReclaimPolicy: Retain
   nodeAffinity:
     required:
       nodeSelectorTerms:
-      - matchExpressions:
-        - key: kubernetes.io/hostname
-          operator: In
-          values:
-          - 172.19.157.1
+        - matchExpressions:
+            - key: kubernetes.io/hostname
+              operator: In
+              values:
+                - 172.19.157.1
 ---
 apiVersion: v1
 kind: PersistentVolumeClaim
 metadata:
-  namespace: ufc
+  namespace: test
   name: pvc-gitlab-data
 spec:
   # It's necessary to specify "" as the storageClassName
   # so that the default storage class won't be used, see
   # https://kubernetes.io/docs/concepts/storage/persistent-volumes/#class-1
-  storageClassName: ""
+  storageClassName: ''
   volumeName: pv-gitlab-data
   accessModes:
     - ReadWriteOnce
@@ -88,10 +88,10 @@ spec:
 apiVersion: v1
 kind: PersistentVolume
 metadata:
-  namespace: ufc
+  namespace: test
   name: pv-gitlab-postgresql
 spec:
-  storageClassName: ""
+  storageClassName: ''
   capacity:
     storage: 1G
   accessModes:
@@ -99,27 +99,27 @@ spec:
   volumeMode: Filesystem
   hostPath:
     path: /mnt/data/pv-gitlab-postgresql
-    type: ""
+    type: ''
   persistentVolumeReclaimPolicy: Retain
   nodeAffinity:
     required:
       nodeSelectorTerms:
-      - matchExpressions:
-        - key: kubernetes.io/hostname
-          operator: In
-          values:
-          - 172.19.157.1
+        - matchExpressions:
+            - key: kubernetes.io/hostname
+              operator: In
+              values:
+                - 172.19.157.1
 ---
 apiVersion: v1
 kind: PersistentVolumeClaim
 metadata:
-  namespace: ufc
+  namespace: test
   name: pvc-gitlab-postgresql
 spec:
   # It's necessary to specify "" as the storageClassName
   # so that the default storage class won't be used, see
   # https://kubernetes.io/docs/concepts/storage/persistent-volumes/#class-1
-  storageClassName: ""
+  storageClassName: ''
   volumeName: pv-gitlab-postgresql
   accessModes:
     - ReadWriteOnce
@@ -131,10 +131,10 @@ spec:
 apiVersion: v1
 kind: PersistentVolume
 metadata:
-  namespace: ufc
+  namespace: test
   name: pv-gitlab-redis
 spec:
-  storageClassName: ""
+  storageClassName: ''
   capacity:
     storage: 1G
   accessModes:
@@ -142,27 +142,27 @@ spec:
   volumeMode: Filesystem
   hostPath:
     path: /mnt/data/pv-gitlab-redis
-    type: ""
+    type: ''
   persistentVolumeReclaimPolicy: Retain
   nodeAffinity:
     required:
       nodeSelectorTerms:
-      - matchExpressions:
-        - key: kubernetes.io/hostname
-          operator: In
-          values:
-          - 172.19.157.1
+        - matchExpressions:
+            - key: kubernetes.io/hostname
+              operator: In
+              values:
+                - 172.19.157.1
 ---
 apiVersion: v1
 kind: PersistentVolumeClaim
 metadata:
-  namespace: ufc
+  namespace: test
   name: pvc-gitlab-redis
 spec:
   # It's necessary to specify "" as the storageClassName
   # so that the default storage class won't be used, see
   # https://kubernetes.io/docs/concepts/storage/persistent-volumes/#class-1
-  storageClassName: ""
+  storageClassName: ''
   volumeName: pv-gitlab-redis
   accessModes:
     - ReadWriteOnce
