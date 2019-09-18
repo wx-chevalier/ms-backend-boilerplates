@@ -2,11 +2,23 @@
 
 # Backend Boilerplates | 服务端应用项目模板
 
-该仓库存放了笔者服务端开发、部署、运维相关的实践模板。原编程语言相关的内容依次迁移到了 []()。
+该仓库存放了笔者服务端开发、部署、运维相关的实践模板。目前仓库中主要包含了[数据库](./Database)、[DevOps 脚本](./DevOps)、[Kubernetes](./K8s)、[服务端架构模式](./Patterns)、[中间件](./Middleware)、[计算平台](./Platform) 等部分。
 
-目前仓库中主要包含了[数据库](./Database)、[DevOps 脚本](./DevOps)、[Kubernetes](./K8s)、[服务端架构模式](./Patterns)、[中间件](./Middleware)、[计算平台](./Platform) 等部分。
+# Nav | 导航
 
-# Others | 延伸阅读
+## 项目索引
+
+## 关联子项目
+
+- [spring-snippets](https://github.com/wx-chevalier/spring-snippets)
+
+# About
+
+[![image.png](https://i.postimg.cc/y1QXgJ6f/image.png)](https://postimg.cc/bZFSQcfz)
+
+## Motivation & Credits
+
+## Others | 延伸阅读
 
 [某熊的技术之路指北 ☯ ](https://github.com/wx-chevalier/Developer-Zero-To-Mastery)就是对笔者不同领域方面沉淀下的知识仓库的导航与索引，便于读者快速地寻找到自己需要的内容。路漫漫其修远兮，吾正上下而求索，也希望能给所有遇见过笔者痕迹的同学些许帮助，在浩瀚银河间能顺利达到一个又一个彼岸。Just Coder，Travel in Galaxy，欢迎关注[某熊的技术之路](https://i.postimg.cc/mDxdH0VL/image.png)公众号，让我们一起前行。
 
@@ -27,7 +39,3 @@
 
 
 - 前往 [xCompass](https://wx-chevalier.github.io/home/#/search) 交互式地检索、查找需要的文章/链接/书籍/课程，或者关注微信公众号：某熊的技术之路。
-
-# Motivation & Credits
-
-[![image.png](https://i.postimg.cc/y1QXgJ6f/image.png)](https://postimg.cc/bZFSQcfz)
