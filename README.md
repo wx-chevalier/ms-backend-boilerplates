@@ -1,4 +1,4 @@
-![](https://i.postimg.cc/qvkqRvPk/image.png)
+![](https://s2.ax1x.com/2019/09/18/n7WDLF.png)
 
 # Backend Boilerplates | 服务端应用项目模板
 
