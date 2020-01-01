@@ -12,11 +12,13 @@
 
 ## 关联子项目
 
-- [spring-snippets](https://github.com/wx-chevalier/spring-snippets)
+- [spring-examples](https://github.com/wx-chevalier/spring-examples)
 
-- [node-snippets](https://github.com/wx-chevalier/node-snippets)
+- [node-examples](https://github.com/wx-chevalier/node-examples)
 
-- [devops-snippets](https://github.com/wx-chevalier/devops-snippets)
+- [devops-examples](https://github.com/wx-chevalier/devops-examples)
+
+- [k8s-examples](https://github.com/BE-Kits/k8s-examples)
 
 # About
 
