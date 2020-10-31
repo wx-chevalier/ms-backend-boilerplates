@@ -18,7 +18,7 @@
 
 - [devops-examples](https://github.com/wx-chevalier/devops-examples)
 
-- [k8s-examples](https://github.com/BE-Kits/k8s-examples)
+- [k8s-examples](https://github.com/wx-chevalier/k8s-examples)
 
 # About
 
