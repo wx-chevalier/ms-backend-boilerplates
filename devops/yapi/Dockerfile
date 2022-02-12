@@ -4,7 +4,7 @@ RUN apt-get install -y  git python make openssl tar gcc
 ADD yapi.tgz /home/
 RUN mkdir /api && mv /home/package /api/vendors
 RUN cd /api/vendors && \
-    npm install --production --registry https://registry.npm.taobao.org
+    npm install --production --registry https://registry.npmmirror.com
 
 FROM node:11
 
